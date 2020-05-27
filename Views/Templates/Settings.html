@@ -1,0 +1,72 @@
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <nav class="nav-sidebar">
+                    <ul class="sidebar nav-side">
+                        <li class="active list-unstyled"><a href="#"><span class="mdi mdi-home"></span>  Home Feed</a></li>
+                        <li class="list-unstyled"><a href="/profile"><span class="mdi mdi-account-circle"></span>  Profile</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-email"></span>  Messages</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-google-circles-group"></span>  Friends</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-google-circles-communities"></span>  Communities</a></li>
+
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-bell"></span>  Notifications</a></li>
+                        <li class="separator list-unstyled"><br /></li>
+                        <li class="list-unstyled"><a href="/settings"><span class="mdi mdi-email"></span>  Settings</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-email"></span>  Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="container col-sm-9 col-sm-offset-3" style="padding-right: 40px; padding-left: 40px;">
+                <div class="container-fluid" style="background:url($session['user']['background']);">
+                    <div class="avatar">
+                        <img scr="$session['user']['avatar']" />
+                    </div>
+                    <div class="names">
+                        <h3 class="title text-light text-center">$session['user']['name']</h3></div>
+                </div>
+                <nav class="navbar navbar-default navbar-info navbar-expand-lg">
+                     <div class="container col-sm-12">
+                         <ul class="nav">
+                            <li class="nav-item"><a class="waves-effect nav-link"  style="color: #007bff;" href="/profile/$session['user']['name']">Activity<div class="ripple-container"></div></a></li>
+                            <li class="nav-item"><a class="nav-link"  style="color: #007bff;" href="/profile/$session['user']['name']/info">Info<div class="ripple-container"></div></a></li>
+                            <li class="nav-item"><a class="nav-link"  style="color: #007bff;" href="/profile/$session['user']['name']/code">Code<div class="ripple-container"></div></a></li>
+                            <li class="nav-item"><a class="nav-link"  style="color: #007bff;" href="/profile/$session['user']['name']/contact">Contact<div class="ripple-container"></div></a></li>
+                         </ul>
+                     </div>
+                </nav>
+                <br />
+
+
+                <div class="card col-sm-6">
+                     <form id="settings-form">
+                         <h2>Basic Info</h2>
+                         <span class="subtitle"><b>Name</b></span>
+                         <p><input name="name" class="form-control" placeholder="Enter your name" value="$session['user']['name']" /></p>
+                         <span class="subtitle"><b>About</b></span>
+                         <p><textarea name="about" class="form-control" placeholder="Say a little about yourself">$session['user']['about']</textarea></p>
+                         <span class="subtitle"><b>Hobbies</b></span>
+                         <p><input name="hobbies" class="form-control" placeholder="What do you like to do?" value="$session['user']['hobbies']" /></p>
+                         <span class="subtitle"><b>Birthday</b></span>
+                         <p><input name="birthday" class="form-control" placeholder="When is your birthday?" value="$session['user']['birthday']" /></p>
+                         <button type="submit" class="btn btn-info waves-effect ripple">Save</button>
+                     </form>
+                </div>
+                <br/>
+                <div class="card col-sm-6">
+                    <h2>Images</h2>
+                    <span class="subtitle">Avatar</span>
+                    <form id="avatar-upload" method="POST" enctype="multipart/form-data" action="/upload-image/avatar">
+                        <input type="file" name="avatar" class="" />
+                        <button type="submit" class="btn btn-info btn-raised">Save</button>
+                    </form>
+                    <span class="subtitle">Background Image</span>
+                    <form id="background-upload" method="POST" enctype="multipart/form-data" action="/upload-image/background">
+                        <input type="file" name="background" class="" />
+                        <button type="submit" class="btn btn-info btn-raised">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>

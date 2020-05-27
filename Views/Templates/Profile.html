@@ -1,0 +1,38 @@
+$def with (posts, user_info)
+$ count = 1
+
+<div class="container">
+        <div class="row">
+            <ul class="sidebar">
+                <li class="active list-unstyled"><a href="/"><span class="mdi mdi-home"></span>  Home Feed</a></li>
+                <li class="list-unstyled"><a href="/profile/$session['user']['username']"><span class="mdi mdi-account-circle"></span>  Profile</a></li>
+                <li class="list-unstyled"><a href="#"><span class="mdi mdi-email"></span>  Messages</a></li>
+                <li class="list-unstyled"><a href="#"><span class="mdi mdi-google-circles-group"></span>  Friends</a></li>
+                <li class="list-unstyled"><a href="#"><span class="mdi mdi-google-circles-communities"></span>  Communities</a></li>
+
+                <li class="list-unstyled"><a href="#"><span class="mdi mdi-bell"></span>  Notifications</a></li>
+                <li class="separator list-unstyled"><br /></li>
+                <li class="list-unstyled"><a href="/settings"><span class="mdi mdi-email"></span>  Settings</a></li>
+                <li class="list-unstyled"><a href="#"><span class="mdi mdi-email"></span>  Help</a></li>
+            </ul>
+            <div class="col-md-12">
+                <div class="header">
+                    <div class="background-image" style="background:url($user_info['background']);" >
+                        <div class="avatar">
+                            <img src="$user_info['avatar']" class="avatar" />
+                            <h3 class="title text-light text-center">$user_info['name']</h3>
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <ul class="nav navbar-nav navbar-center navbar-expand-md">
+                            <li class="active list-unstyled"><a href="/profile/$user_info['username']">Activity</a></li>
+                            <li class="list-unstyled"><a href="/profile/$user_info['username']/info">Info</a></li>
+                            <li class="list-unstyled"><a href="/profile/$user_info['username']/code">Code</a></li>
+                            <li class="list-unstyled"><a href="/profile/$user_info['username']/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>

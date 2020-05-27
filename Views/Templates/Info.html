@@ -1,0 +1,58 @@
+$def with (user_info)
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <nav class="nav-sidebar">
+                    <ul class="sidebar nav-side">
+                        <li class="active list-unstyled"><a href="#"><span class="mdi mdi-home"></span>  Home Feed</a></li>
+                        <li class="list-unstyled"><a href="/profile/$session['user']['username']"><span class="mdi mdi-account-circle"></span>  Profile</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-email"></span>  Messages</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-google-circles-group"></span>  Friends</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-google-circles-communities"></span>  Communities</a></li>
+
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-bell"></span>  Notifications</a></li>
+                        <li class="separator list-unstyled"><br /></li>
+                        <li class="list-unstyled"><a href="/settings"><span class="mdi mdi-email"></span>  Settings</a></li>
+                        <li class="list-unstyled"><a href="#"><span class="mdi mdi-email"></span>  Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="container col-sm-9 col-sm-offset-3" style="padding-right: 40px; padding-left: 40px;">
+                <div class="header">
+                    <div class="background-image" style="background:url($user_info['background']);" >
+                        <div class="avatar">
+                            <img src="$user_info['avatar']" class="avatar" />
+                            <h3 class="title text-light text-center">$user_info['name']</h3>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-default navbar-info navbar-expand-lg">
+                     <div class="container col-sm-12">
+                         <ul class="nav">
+                            <li class="nav-item"><a class="waves-effect nav-link"  style="color: #007bff;" href="/profile/$user_info['name']">Activity<div class="ripple-container"></div></a></li>
+                            <li class="nav-item"><a class="nav-link"  style="color: #007bff;" href="/profile/$user_info['name']/info">Info<div class="ripple-container"></div></a></li>
+                            <li class="nav-item"><a class="nav-link"  style="color: #007bff;" href="/profile/$user_info['name']/code">Code<div class="ripple-container"></div></a></li>
+                            <li class="nav-item"><a class="nav-link"  style="color: #007bff;" href="/profile/$user_info['name']/contact">Contact<div class="ripple-container"></div></a></li>
+                         </ul>
+                     </div>
+                </nav>
+                <br />
+
+             <div class="card col-sm-6">
+                 <div class="card-header">Basic Info</div>
+                 <div class="card-body justify-content-between align-items-center">
+                     <h4>Name</h4>
+                     <p>$user_info['name']</p>
+                     <h4>About</h4>
+                     <p>$user_info['about']</p>
+                     <h4>Hobbies</h4>
+                     <p>$user_info['hobbies']</p>
+                     <h4>Birthday</h4>
+                     <p>$user_info['birthday']</p>
+                 </div>
+             </div>
+            </div>
+        </div>
+</div>
